@@ -1,40 +1,37 @@
-package com.mateo.velazco.calculadora;
+package com.mateo.velazco.explorandolayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button buttonscreen2, buttonTable;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {//método que va en todas las activities
-        super.onCreate(savedInstanceState); //
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btsum, btrest, btmul, btdiv;
-        EditText etnum1, etnum2;
-        TextView tvres;
+        buttonscreen2 = findViewById(R.id.button1);
+        buttonTable = findViewById(R.id.button2);
+    }
 
-        btsum = findViewById(R.id.buttonsumar); //busque por el id que se le coloca
-        btrest = findViewById(R.id.buttonrestar);
-        btmul = findViewById(R.id.buttonmulti);
-        btdiv = findViewById(R.id.buttondivide);
+    public void clickIrPantalla2(View view){
 
-        etnum1 = findViewById(R.id.etvname1);
-        etnum2 = findViewById(R.id.etvname2);
-        tvres = findViewById(R.id.tvresultado);
-
-
-
+        Intent miIntent = new Intent(MainActivity.this,ScreenActivity2.class);
+        startActivity(miIntent);
 
     }
 
-    public void clickSumar(View myview){
-        Toast.makeText(this, "LE DÍ CLICK A SUMAR", Toast.LENGTH_SHORT).show();
+    public void clickIrPantalla3(View view){
+
+        Intent miIntent = new Intent(MainActivity.this,TableActivity.class);
+        startActivity(miIntent);
 
     }
 }
